@@ -1,25 +1,30 @@
-const Discord = require("discord.js")
+// Import các modules cần thiết từ thư viện Discord.js
+const Discord = require("discord.js");
 const { Client, GatewayIntentBits, Partials } = require("discord.js");
+
+// Tạo một client mới cho bot
 const client = new Client({
   partials: [
-    Partials.Message, // for message
-    Partials.Channel, // for text channel
-    Partials.GuildMember, // for guild member
-    Partials.Reaction, // for message reaction
+    Partials.Message, // cho tin nhắn
+    Partials.Channel, // cho kênh văn bản
+    Partials.GuildMember, // cho thành viên trong server
+    Partials.Reaction, // cho phản ứng tin nhắn
   ],
   intents: [
-    GatewayIntentBits.Guilds, // for guild related things
-    GatewayIntentBits.GuildInvites, // for guild invite managing
-    GatewayIntentBits.GuildMessages, // for guild messages things
-    GatewayIntentBits.GuildMessageReactions, // for message reactions things
-    GatewayIntentBits.MessageContent, // enable if you need message content things
+    GatewayIntentBits.Guilds, // cho những thao tác liên quan đến server
+    GatewayIntentBits.GuildInvites, // cho quản lý lời mời vào server
+    GatewayIntentBits.GuildMessages, // cho tin nhắn trong server
+    GatewayIntentBits.GuildMessageReactions, // cho phản ứng của tin nhắn
+    GatewayIntentBits.MessageContent, // bật nếu cần các thao tác liên quan đến nội dung tin nhắn
   ],
 });
+
+// Import module fs để làm việc với file system
 const fs = require("fs");
 const config = require("./config.json");
 client.config = config;
 
-// Initialise discord giveaways
+// Khởi tạo hệ thống quản lý các sự kiện Giveaway trong Discord
 const { GiveawaysManager } = require("discord-giveaways");
 client.giveawaysManager = new GiveawaysManager(client, {
   storage: "./storage/giveaways.json",
@@ -37,9 +42,7 @@ client.giveawaysManager = new GiveawaysManager(client, {
 });
 //Coded by TKen
 
-/* Chạy toàn bộ sự kiện Discord */
-
-
+/* Chạy tất cả các sự kiện Discord */
 fs.readdir("./events/discord", (_err, files) => {
   files.forEach(file => {
     if (!file.endsWith(".js")) return;
@@ -51,9 +54,7 @@ fs.readdir("./events/discord", (_err, files) => {
   });
 });
 
-/* Chạy toàn bộ sự kiện Giveaway */
-
-
+/* Chạy tất cả các sự kiện Giveaway */
 fs.readdir("./events/giveaways", (_err, files) => {
   files.forEach((file) => {
     if (!file.endsWith(".js")) return;
@@ -64,9 +65,9 @@ fs.readdir("./events/giveaways", (_err, files) => {
   })
 })
 
-// Let commands be a new collection ( message commands )
+// Tạo một collection để lưu trữ các lệnh (message commands)
 client.commands = new Discord.Collection();
-/* Load all commands */
+/* Tải tất cả các lệnh */
 fs.readdir("./commands/", (_err, files) => {
   files.forEach(file => {
     if (!file.endsWith(".js")) return;
@@ -80,11 +81,11 @@ fs.readdir("./commands/", (_err, files) => {
   });
 });
 
-// let interactions be a new collection ( slash commands  )
+// Tạo một collection để lưu trữ các slash command
 client.interactions = new Discord.Collection();
-// creating an empty array for registering slash commands
+// Tạo một mảng trống để đăng ký slash command
 client.register_arr = []
-/* Load all slash commands */
+/* Tải tất cả các slash command */
 fs.readdir("./slash/", (_err, files) => {
   files.forEach(file => {
     if (!file.endsWith(".js")) return;
@@ -98,6 +99,5 @@ fs.readdir("./slash/", (_err, files) => {
   });
 });
 
-
-// Login through the client
+// Đăng nhập vào Discord bằng thông tin token trong file config
 client.login(config.token);
