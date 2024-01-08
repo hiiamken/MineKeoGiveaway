@@ -1,0 +1,33 @@
+{
+  "name": "MineKeo Giveaway",
+  "version": "1.0.0",
+  "description": "Bot Giveaway được tạo bởi TKen",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "TKen",
+  "keywords": [
+    "discord",
+    "giveaways",
+    "giveaway",
+    "bot",
+    "discord.js",
+    "discordjs"
+  ],
+  "dependencies": {
+    "discord-giveaways": "^6.0.1",
+    "discord.js": "^14.6.0",
+    "ms": "^3.0.0-canary.1",
+    "parsec": "^2.0.2"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "url": "https://github.com/hiiamken/MineKeo-Giveaway"
+  },
+  "devDependencies": {
+    "node": "^16.9.1"
+  }
+}
