@@ -1,7 +1,7 @@
 <center><img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=MineKeo-GiveAway&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient" /></center>
 
 
-  <h1 align="center">MineKeo GiveAway v1.2.0</h1>
+  <h1 align="center">MineKeo GiveAway v1.2.1</h1>
 
   <p align="center">Full tính năng của Giveaway mà các bạn cần!
     <br />
