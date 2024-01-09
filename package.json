@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "discord-giveaways": "^6.0.1",
-    "discord.js": "^14.6.0",
+    "discord.js": "^14.14.1",
     "ms": "^3.0.0-canary.1",
     "parsec": "^2.0.2"
   },
@@ -25,7 +25,7 @@
     "node": "16.x"
   },
   "repository": {
-    "url": "https://github.com/hiiamken/MineKeo-Giveaway"
+    "url": "https://github.com/hiiamken/MineKeoGiveaway"
   },
   "devDependencies": {
     "node": "^16.9.1"

@@ -1,0 +1,64 @@
+const { ApplicationCommandOptionType } = require('discord.js');
+
+module.exports = {
+    name: "resume",
+    description: '▶ Tiếp tục một sự kiện giveaway đã tạm dừng',
+
+    options: [
+        {
+            name: 'giveaway',
+            description: 'Sự kiện giveaway cần tiếp tục (ID tin nhắn hoặc giải thưởng)',
+            type: ApplicationCommandOptionType.String,
+            required: true
+        }
+    ],
+
+    run: async (client, interaction) => {
+
+        // Nếu thành viên không có đủ quyền hạn
+        if (!interaction.member.permissions.has('ManageMessages') && !interaction.member.roles.cache.some((r) => r.name === "Giveaways")) {
+            return interaction.reply({
+                content: ':x: Bạn cần có quyền quản lý tin nhắn để tiếp tục sự kiện giveaway.',
+                ephemeral: true
+            });
+        }
+
+        const query = interaction.options.getString('giveaway');
+
+        // Tìm sự kiện giveaway dựa trên giải thưởng hoặc ID
+        const giveaway =
+            // Tìm theo giải thưởng
+            client.giveawaysManager.giveaways.find((g) => g.prize === query && g.guildId === interaction.guild.id) ||
+            // Tìm theo ID sự kiện giveaway
+            client.giveawaysManager.giveaways.find((g) => g.messageId === query && g.guildId === interaction.guild.id);
+
+        // Nếu không tìm thấy sự kiện giveaway
+        if (!giveaway) {
+            return interaction.reply({
+                content: 'Không thể tìm thấy sự kiện giveaway cho `' + query + '`.',
+                ephemeral: true
+            });
+        }
+
+        if (!giveaway.pauseOptions.isPaused) {
+            return interaction.reply({
+                content: `**[Sự kiện này](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId})** không bị tạm dừng!`,
+                ephemeral: true
+            });
+        }
+
+        // Tiếp tục sự kiện giveaway
+        client.giveawaysManager.unpause(giveaway.messageId)
+            // Thông báo thành công
+            .then(() => {
+                interaction.reply(`**[Sự kiện này](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId})** đã được tiếp tục thành công!`);
+            })
+            .catch((e) => {
+                interaction.reply({
+                    content: e,
+                    ephemeral: true
+                });
+            });
+
+    }
+};
