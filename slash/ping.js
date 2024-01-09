@@ -5,7 +5,7 @@ module.exports = {
     description: '🏓Kiểm tra ping của tôi!',
     run: async (client, interaction) => {
       let pembed = new EmbedBuilder()
-		  .setColor('#2F3136')	
+		  .setColor("#EFB2FB")
 		  .setTitle('Độ trễ của Bot')
 		  .addFields({ name: '**Độ trễ**', 
                    value: `\`${Date.now() - interaction.createdTimestamp}ms\``

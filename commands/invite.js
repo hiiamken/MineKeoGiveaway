@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
      })  
     .setTitle("Link mời và hỗ trợ!")
     .setDescription(`Mời ${client.user} vào máy chủ của bạn để sử dụng các tính năng giveaway tốt nhất!`)
-    .setColor('#2F3136')
+    .setColor("#EFB2FB")
     .setTimestamp()
     .setFooter({
       text: `Yêu cầu bởi ${message.author.username} | ` + config.copyright, 

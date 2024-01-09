@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
       iconURL: message.author.displayAvatarURL()
     })
     .setTitle("Độ trễ của Bot")
-    .setColor('#2F3136')	
+    .setColor("#EFB2FB")	
     .setTimestamp()
                  
     .addFields([

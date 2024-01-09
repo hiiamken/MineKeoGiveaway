@@ -31,7 +31,7 @@ module.exports = {
       .setDescription(
         `Mời ${client.user} vào máy chủ của bạn để sử dụng các tính năng giveaway tốt nhất!`
       )
-      .setColor("#2F3136")
+      .setColor("#EFB2FB")
       .setTimestamp()
       .setFooter({
         text: `Yêu cầu bởi ${interaction.user.username} | ` + config.copyright,

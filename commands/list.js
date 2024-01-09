@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
   const msg = await message.reply({ embeds: [new Discord.EmbedBuilder().setDescription("Chọn một tuỳ chọn để lựa chọn danh mục!").setColor("#2F3136").setTimestamp()], components: [row] })
   let embed = new Discord.EmbedBuilder()
     .setTitle("Các giveaway đang diễn ra")
-    .setColor("#2F3136")
+    .setColor("#EFB2FB")
     .setFooter({
       text: `${client.user.username}`, 
       iconURL: client.user.displayAvatarURL()

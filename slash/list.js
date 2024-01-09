@@ -26,14 +26,14 @@ module.exports = {
       embeds: [
         new Discord.EmbedBuilder()
           .setDescription('Chọn một lựa chọn trong menu để bắt đầu!')
-          .setColor('#f542ec')
+          .setColor("#EFB2FB")
           .setTimestamp(),
       ],
       components: [row],
     });
     let embed = new Discord.EmbedBuilder()
       .setTitle('Các Sự Kiện Giveaway Đang Diễn Ra')
-      .setColor('#f58142')
+      .setColor("#EFB2FB")
       .setFooter({
         text: `Yêu cầu bởi ${interaction.user.username} | ` + config.copyright,
         iconURL: interaction.user.displayAvatarURL()

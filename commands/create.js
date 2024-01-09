@@ -21,7 +21,7 @@ module.exports.run = async (client, message) => {
 
     let xembed = new EmbedBuilder()
       .setTitle("Rất tiếc! Hình như đã hết thời gian! 🕖")
-      .setColor("#FF0000")
+      .setColor("#EFB2FB")
       .setDescription('💥 Hết giờ rồi!\nBạn đã mất quá nhiều thời gian để quyết định!\nSử dụng ``create`` để bắt đầu một sự kiện giveaway mới!\nHãy đợi thêm **30 giây** để thử lại!')
       .setFooter({
         text: `${client.user.username}`,
@@ -44,7 +44,7 @@ module.exports.run = async (client, message) => {
             iconURL: client.user.displayAvatarURL()
           })
           .setTimestamp()
-          .setColor('#2F3136'),
+          .setColor("#EFB2FB"),
       ],
     });
   }

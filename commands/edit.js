@@ -18,7 +18,7 @@ module.exports.run = async (client, message) => {
     let giveawayx = "";
     let embed = new Discord.EmbedBuilder()
       .setTitle("Chỉnh sửa một sự kiện giveaway!")
-      .setColor('#2F3136')
+      .setColor("#EFB2FB")
       .setFooter({ 
         text: `${client.user.username}`, 
         iconURL: client.user.displayAvatarURL() 
@@ -33,7 +33,7 @@ module.exports.run = async (client, message) => {
     );
     let xembed = new Discord.EmbedBuilder()
       .setTitle("Ối! Hết thời gian phản hồi! 🕖")
-      .setColor("#FF0000")
+      .setColor("#EFB2FB")
       .setDescription('💥 Đã hết thời gian!\nBạn đã mất quá nhiều thời gian để chỉnh sửa!\nSử dụng ``edit`` để chỉnh sửa lại giveaway!\nCần phản hồi trong **30 seconds** ngay lúc này!')
       .setFooter({ 
         text: `${client.user.username}`, 

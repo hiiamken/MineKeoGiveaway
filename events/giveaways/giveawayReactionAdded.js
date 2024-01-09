@@ -3,19 +3,21 @@ module.exports = {
   async execute(giveaway, reactor, messageReaction) {
     let approved = new Discord.EmbedBuilder()
       .setTimestamp()
-      .setColor("#2F3136")
-      .setTitle("Tham gia thành công! | Hên hên lại win thì sao!!")
+      .setColor("#EFB2FB")
+      .setTitle("🎉 Tham gia thành công! 🎉")
       .setDescription(
-        `Đã chấp nhận tham gia [Giveaway này](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId}) của bạn!`
+        `Bạn vừa tham gia một sự kiện [Giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId}) tại MineKeo Network.\nHi vọng bạn sẽ lụm được giải thưởng trong sự kiện lần này nha!\n\n Nhớ theo dõi các thông báo của chúng mình để không bỏ lỡ các sự kiện mới nhất nhé.`
       )
       .setFooter({ text: "MineKeo Network" })
+      .setThumbnail('https://cdn.discordapp.com/attachments/1174937441556238396/1194089044074836069/vitrine-logo_1.png?ex=65af1515&is=659ca015&hm=079b89b4421d9c2f3c78c245c26153e54bcbb3e0abd3f5ecfa474e841d2252a7&')
       .setTimestamp();
     let denied = new Discord.EmbedBuilder()
       .setTimestamp()
-      .setColor("#2F3136")
-      .setTitle(":x: Bị Từ Chối | Tham gia thất bại!")
+      .setColor("#EFB2FB")
+      .setTitle("🎉 Tham gia thất bại! 🎉")
+      .setThumbnail('https://cdn.discordapp.com/attachments/1174937441556238396/1194089044074836069/vitrine-logo_1.png?ex=65af1515&is=659ca015&hm=079b89b4421d9c2f3c78c245c26153e54bcbb3e0abd3f5ecfa474e841d2252a7&')
       .setDescription(
-        `Tham gia [Giveaway này](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId}) của bạn đã bị từ chối, hãy xem xét lại yêu cầu của Giveaway một cách chính xác.`
+        `Bạn không thể tham gia [Giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId}) tại MineKeo Network!\nHãy xem xét lại yêu cầu của Giveaway một cách chính xác.`
       )
       .setFooter({ text: "MineKeo Network" });
 

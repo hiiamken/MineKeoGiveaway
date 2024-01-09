@@ -12,7 +12,7 @@ module.exports = {
   run: async (client, interaction) => {
     const embed = new EmbedBuilder()
       .setTitle(`Các lệnh của ${client.user.username}`)
-      .setColor("#2F3136")
+      .setColor("#EFB2FB")
       .setDescription(
         "**Vui lòng chọn một danh mục để xem tất cả các lệnh trong đó**"
       )
@@ -30,7 +30,7 @@ module.exports = {
 
     const giveaway = new EmbedBuilder()
       .setTitle("Danh mục » Giveaway")
-      .setColor("#2F3136")
+      .setColor("#EFB2FB")
       .setDescription("```yaml\nCác lệnh Giveaway:```")
       .addFields(
         {
@@ -82,7 +82,7 @@ module.exports = {
 
     const general = new EmbedBuilder()
       .setTitle("Danh mục » Chung")
-      .setColor("#2F3136")
+      .setColor("#EFB2FB")
       .setDescription("```yaml\nCác lệnh chung:```")
       .addFields(
         {

@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
 const embed = new EmbedBuilder()
 .setTitle(`Các lệnh của ${client.user.username}`)
-.setColor('#2F3136')
+.setColor("#EFB2FB")
 .setDescription('**Vui lòng chọn một danh mục để xem tất cả các lệnh của nó**')
 .addFields({ name: `Links:`, value: `- [Discord Server](https://discord.gg/minekeo)\n- [GitHub](https://github.com/hiiamken/MineKeoGiveaway)`, inline: true })
 .setTimestamp()
@@ -16,7 +16,7 @@ const embed = new EmbedBuilder()
 
   const giveaway = new EmbedBuilder()
   .setTitle("Danh mục » Giveaway")
-  .setColor('#2F3136')
+  .setColor("#EFB2FB")
   .setDescription("```yaml\nCác lệnh Giveaway:```")
   .addFields(
     { name: 'Create / Start'  , value: `Tạo một sự kiện giveaway!\n > **Loại: __\`slash\` / \`message\`__**`, inline: true },
@@ -36,7 +36,7 @@ const embed = new EmbedBuilder()
 
   const general = new EmbedBuilder()
   .setTitle("Danh mục » Chung")
-  .setColor('#2F3136')
+  .setColor("#EFB2FB")
   .setDescription("```yaml\nCác lệnh chung:```")
   .addFields(
     { name: 'Help'  , value: `Các lệnh hiện có!\n > **Loại: __\`slash\` / \`message\`__**`, inline: true },

@@ -30,13 +30,14 @@ client.giveawaysManager = new GiveawaysManager(client, {
   storage: "./storage/giveaways.json",
   default: {
     botsCanWin: false,
-    embedColor: "#2F3136",
+    embedColor: "#EFB2FB",
+    embedColorEnd: "#EFB2FB",
     reaction: "🎉",
     lastChance: {
       enabled: true,
       content: `🛑 **Cơ hội cuối để tham gia** 🛑`,
       threshold: 5000,
-      embedColor: '#FF0000'
+      embedColor: '#EFB2FB'
     }
   }
 });

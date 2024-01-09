@@ -12,6 +12,6 @@ module.exports = {
   embedFooter: "{this.winnerCount} giải",
   noWinner: "Giveaway đã bị huỷ, không có ai tham gia hợp lệ.",
   hostedBy: "Tổ chức bởi: {this.hostedBy}",
-  winners: "giải",
+  winners: "Người chiến thắng",
   endedAt: "Kết thúc vào"
 }
