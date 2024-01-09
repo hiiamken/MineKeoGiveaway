@@ -49,7 +49,7 @@ fs.readdir("./events/discord", (_err, files) => {
     if (!file.endsWith(".js")) return;
     const event = require(`./events/discord/${file}`);
     let eventName = file.split(".")[0];
-    console.log(`[Event]   ✅  Loaded: ${eventName}`);
+    console.log(`[Sự kiện] ${eventName} ✅ Đã load thành công`);
     client.on(eventName, event.bind(null, client));
     delete require.cache[require.resolve(`./events/discord/${file}`)];
   });
@@ -61,7 +61,7 @@ fs.readdir("./events/giveaways", (_err, files) => {
     if (!file.endsWith(".js")) return;
     const event = require(`./events/giveaways/${file}`);
     let eventName = file.split(".")[0];
-    console.log(`[Event]   🎉 Loaded: ${eventName}`);
+    console.log(`[Sự kiện] ${eventName} 🎉 Đã load thành công`);
     client.giveawaysManager.on(eventName, (...file) => event.execute(...file, client)), delete require.cache[require.resolve(`./events/giveaways/${file}`)];
   })
 })
@@ -78,7 +78,7 @@ fs.readdir("./commands/", (_err, files) => {
       name: commandName,
       ...props
     });
-    console.log(`[Command] ✅  Loaded: ${commandName}`);
+    console.log(`[Lệnh] ${commandName} ✅ Đã load thành công`);
   });
 });
 

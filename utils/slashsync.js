@@ -11,22 +11,22 @@ module.exports = async (client, commands, options = {
     await ready;
     const currentCommands = await client.application.commands.fetch(options.guildId && { guildId: options.guildId });
 
-    log(`Synchronizing commands...`);
-    log(`Currently ${currentCommands.size} commands are registered to the bot.`);
+    log(`Đang đồng bộ hoá các lệnh...`);
+    log(`Hiện tại có ${currentCommands.size} lệnh của bot đã được đăng kí.`);
 
     const newCommands = commands.filter((command) => !currentCommands.some((c) => c.name === command.name));
     for (let newCommand of newCommands) {
         await client.application.commands.create(newCommand, options.guildId);
     }
 
-    log(`Created ${newCommands.length} commands!`);
+    log(`Đã tạo ${newCommands.length} lệnh!`);
 
     const deletedCommands = currentCommands.filter((command) => !commands.some((c) => c.name === command.name)).toJSON();
     for (let deletedCommand of deletedCommands) {
         await deletedCommand.delete();
     }
 
-    log(`Deleted ${deletedCommands.length} commands!`);
+    log(`Đã xoá ${deletedCommands.length} lệnh!`);
 
     const updatedCommands = commands.filter((command) => currentCommands.some((c) => c.name === command.name));
     let updatedCommandCount = 0;
@@ -42,9 +42,9 @@ module.exports = async (client, commands, options = {
         }
     }
 
-    log(`Updated ${updatedCommandCount} commands!`);
+    log(`Đã cập nhật ${updatedCommandCount} lệnh!`);
 
-    log(`Commands synchronized!`);
+    log(`Đồng bộ hoá thành công!`);
 
     return {
         currentCommandCount: currentCommands.size,
