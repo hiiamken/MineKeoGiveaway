@@ -1,0 +1,7 @@
+{
+  "token": "TokenBot", 
+  "prefix": "PrefixBot",
+  "everyoneMention": false,
+  "copyright": "GiveawayBot™ v1 By TKen",
+  "hostedBy": true
+}
