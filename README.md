@@ -1,37 +1,68 @@
-# MineKeo Giveaway Discord Bot
+<center><img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=MineKeo-GiveAway&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient" /></center>
 
-![MineKeo Giveaway Logo](link_to_logo_image)
 
-## Introduction
-Welcome to MineKeo Giveaway, a Discord bot designed to manage giveaways within your server! This bot was coded by TKen and aims to streamline the process of organizing and conducting giveaways seamlessly.
+  <h1 align="center">MineKeo GiveAway v1.2.0</h1>
 
-## Features
-- **Giveaway Management**: Easily create, start, and manage giveaways directly in your Discord server.
-- **Customizable Settings**: Tailor giveaways with customizable settings like duration, prizes, and eligibility criteria.
-- **Last Chance Feature**: Includes a last chance message to encourage participation before a giveaway ends.
-- **Robust Event Handling**: Efficiently handles Discord events to ensure smooth functioning.
+  <p align="center">Full tính năng của Giveaway mà các bạn cần!
+    <br />
+    <br />
+    <a href="https://github.com/hiiamken/MineKeo-Bot-2.0/issues">Báo cáo lỗi hoặc muốn góp ý</a>
+  </p>
+</p>
 
-## Installation
-1. Clone or download the repository.
-2. Install necessary dependencies using `npm install`.
-3. Configure the `config.json` file with your Discord bot token and other settings if required.
-4. Run the bot using `node bot.js`.
+## 🔥 Tính năng
 
-## Usage
-- Ensure the bot has the necessary permissions in your Discord server to manage giveaways.
-- Use commands to create, start, and manage giveaways.
-- Customize bot behavior and settings via the `config.json` file.
+-   ⏱️ Dễ sử dụng
+-   🔄 Tự động restart khi bot bị crash
+-   🇻🇳 Hỗ trợ tiếng Việt
+-   ⚙️ Tuỳ chỉnh nhiều option! (giải thưởng, thời gian, số lượng người chiến thắng, quyền lợi, phần thưởng bonus, vv...)
+-   🚀 Nhiều tính năng: tạo, chỉnh sửa, reroll, kết thúc, xoá và tạm dừng giveaway!
+-   💥 Sự kiện: giveawayEnded, giveawayRerolled, giveawayDeleted, giveawayReactionAdded, giveawayReactionRemoved, endedGiveawayReactionAdded
+-   🖋 Gửi tin nhắn riêng thông báo
+-   🕸️ Lightweight!
+-   và nhiều nhiều nữa!
 
-## Bot Commands
-- `!start-giveaway`: Start a new giveaway in the server.
-- `!end-giveaway [giveawayID]`: End a specific giveaway by its ID.
-- `!reroll [giveawayID]`: Choose a new winner for a completed giveaway.
+## ✔️ Todolist
 
-## Credits
-- **TKen**: Lead developer and creator of MineKeo Giveaway bot.
+-   📁 Hỗ trợ đa đạng cơ sở dữ liệu (MySQL, MongoDB, ...)
 
-## Contribution
-Contributions are welcome! If you have any ideas for improvements or want to report issues, feel free to create a pull request or open an issue on the repository.
+## 🔧 Yêu cầu
 
-## License
-This project is licensed under the [MIT License](link_to_license_file).
+Trước khi bắt đầu, bạn cần cài đặt:
+-   [Node.js v16.9+](https://nodejs.org/en/blog/release/v16.9.0/)
+
+## 🔗 Cách cài đặt
+
+### Bước 1: Cài đặt các depencies:
+Linux 
+```sh
+wget https://nodejs.org/dist/v16.18.0/node-v16.18.0-linux-x64.tar.xz
+unxz node-v16.18.0-linux-x64.tar.xz
+tar xvf node-v16.18.0-linux-x64.tar
+mv node-v16.18.0-linux-x64 /usr/local/node
+
+ln /usr/local/node/bin/node /usr/bin
+ln /usr/local/node/bin/corepack /usr/bin
+ln /usr/local/node/bin/npm /usr/bin
+
+corepack enable
+```
+Windows 
+```sh
+# https://nodejs.org/en/blog/release/v16.9.1/ get node.js
+npm install 
+```
+
+### Bước 2: Lấy Token Bot từ [đây](https://discord.com/developers) <br> <br>
+### Bước 3 : Thay thế token vào [config.json](https://github.com/hiiamken/MineKeoGiveaway/blob/main/config.json) <br>
+#### Thế là xong! Giờ hãy host của bạn là được <3
+
+### Chạy với node
+```sh
+node index.js
+```
+### Chạy với pm2
+```sh
+npm install -g pm2@latest
+pm2 start --name "Giveaway" index.js --watch
+```
